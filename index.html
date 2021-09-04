@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Aleksey Ponomarev">
+  <meta name="address" content="funnydino1@gmail.com">
+  <meta name="description" content="Тестовое задание для студии &quot;Pitch&quot;">
+  <meta name="keywords" content="HTML, CSS, JS, JavaScript, вёрстка, лендинг, Frontend">
+  <link rel="preload" href="./fonts/Rajdhani-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+  <link rel="icon" href="./img/icon.png" type="image/png">
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <script defer src="./js/swiper-bundle.min.js"></script>
+  <script defer src="./js/slider.js"></script>
+  <script defer src="./js/main.js"></script>
+  <title>Тестовое задание для студии &quot;Pitch&quot;</title>
+</head>
+
+<body>
+  <div class="page">
+    <main class="main container">
+      <h1 class="main-title visually-hidden">Тестовое задание для студии &quot;Pitch&quot;</h1>
+      <div class="side-slider">
+        <div class="swiper-cont">
+          <section class="swiper">
+            <img class="logo" src="./img/logo.svg" alt="Логотип сайта">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide card">
+                <picture class="card__picture">
+                  <source srcset="./img/hero/bg/hero_1.webp" type="image/webp" media="(min-width: 1025px)">
+                  <source srcset="./img/hero/bg_768/hero_1.webp" type="image/webp"
+                    media="(min-width: 401px) and (max-width: 1024px)">
+                  <source srcset="./img/hero/bg_375/hero_1.webp" type="image/webp" media="(max-width: 400px)">
+                  <source srcset="./img/hero/bg/hero_1.jpg" type="image/jpeg" media="(min-width: 1025px)">
+                  <source srcset="./img/hero/bg_768/hero_1.jpg" type="image/jpeg"
+                    media="(min-width: 401px) and (max-width: 1024px)">
+                  <source srcset="./img/hero/bg_375/hero_1.jpg" type="image/jpeg" media="(max-width: 400px)">
+                  <img class="card__picture-image" src="./img/hero/bg/hero_1.jpg" alt="Изображение товара">
+                </picture>
+                <div class="card__description">
+                  <h2 class="card-header">
+                    Light coat
+                  </h2>
+                  <p class="card-text">
+                    More cotton, more freedom
+                  </p>
+                </div>
+              </div>
+              <div class="swiper-slide card">
+                <picture class="card__picture">
+                  <source srcset="./img/hero/bg/hero_2.webp" type="image/webp" media="(min-width: 1025px)">
+                  <source srcset="./img/hero/bg_768/hero_2.webp" type="image/webp"
+                    media="(min-width: 401px) and (max-width: 1024px)">
+                  <source srcset="./img/hero/bg_375/hero_2.webp" type="image/webp" media="(max-width: 400px)">
+                  <source srcset="./img/hero/bg/hero_2.jpg" type="image/jpeg" media="(min-width: 1025px)">
+                  <source srcset="./img/hero/bg_768/hero_2.jpg" type="image/jpeg"
+                    media="(min-width: 401px) and (max-width: 1024px)">
+                  <source srcset="./img/hero/bg_375/hero_2.jpg" type="image/jpeg" media="(max-width: 400px)">
+                  <img class="card__picture-image" src="./img/hero/bg/hero_2.jpg" alt="Изображение товара">
+                </picture>
+                <div class="card__description">
+                  <h2 class="card-header">
+                    Sandy longsleeve
+                  </h2>
+                  <p class="card-text">
+                    More cotton, more freedom
+                  </p>
+                </div>
+              </div>
+              <div class="swiper-slide card">
+                <picture class="card__picture">
+                  <source srcset="./img/hero/bg/hero_3.webp" type="image/webp" media="(min-width: 1025px)">
+                  <source srcset="./img/hero/bg_768/hero_3.webp" type="image/webp"
+                    media="(min-width: 401px) and (max-width: 1024px)">
+                  <source srcset="./img/hero/bg_375/hero_3.webp" type="image/webp" media="(max-width: 400px)">
+                  <source srcset="./img/hero/bg/hero_3.jpg" type="image/jpeg" media="(min-width: 1025px)">
+                  <source srcset="./img/hero/bg_768/hero_3.jpg" type="image/jpeg"
+                    media="(min-width: 401px) and (max-width: 1024px)">
+                  <source srcset="./img/hero/bg_375/hero_3.jpg" type="image/jpeg" media="(max-width: 400px)">
+                  <img class="card__picture-image" src="./img/hero/bg/hero_3.jpg" alt="Изображение товара">
+                </picture>
+                <div class="card__description">
+                  <h2 class="card-header">
+                    Lime jacket
+                  </h2>
+                  <p class="card-text">
+                    More cotton, more freedom
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper__nav">
+              <button class="swiper-button-prev"></button>
+              <button class="swiper-button-next"></button>
+              <div class="swiper-pagination"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <div class="hero">
+        <section class="order">
+          <div class="order-descr">
+            <h3 class="section-subtitle">New collection</h3>
+            <h2 class="section-title">
+              Gussi light coat
+            </h2>
+            <p class="section-main-text">
+              It takes you from the party to the after party with its fashion-forward styles. A playfull
+              blend of retro and modern outdoor design.
+            </p>
+          </div>
+          <form class="order-form" id="order-form" action="https://postman-echo.com/post" method="POST"
+            aria-label="Order Form">
+            <div class="order-form__top">
+              <fieldset class="order-form__block order-form__block--colors">
+                <legend class="order-form__legend">
+                  Colour
+                </legend>
+                <ul class="colors">
+                  <li class="colors__item">
+                    <label title="Dark Blue" class="colors__label">
+                      <input type="radio" name="coat-color" class="colors__radio" value="Dark Blue" checked>
+                      <span class="colors__value" style="background-color: #192B3F;"></span>
+                    </label>
+                  </li>
+                  <li class="colors__item">
+                    <label title="Regent Gray" class="colors__label">
+                      <input type="radio" name="coat-color" class="colors__radio" value="Regent Gray">
+                      <span class="colors__value" style="background-color: #8A94A6;"></span>
+                    </label>
+                  </li>
+                  <li class="colors__item">
+                    <label title="Soft Blue" class="colors__label">
+                      <input type="radio" name="coat-color" class="colors__radio" value="Soft Blue">
+                      <span class="colors__value" style="background-color: #3D5876;"></span>
+                    </label>
+                  </li>
+                </ul>
+              </fieldset>
+              <fieldset class="order-form__block order-form__block--sizes">
+                <legend class="order-form__legend">
+                  Size
+                </legend>
+                <div class="size-block">
+                  <ul class="size">
+                    <li class="size__item">
+                      <label title="Extra Small" class="size__label">
+                        <input type="radio" name="coat-size" class="size__radio" value="XS">
+                        <span class="size__value" data-value="XS"></span>
+                      </label>
+                    </li>
+                    <li class="size__item">
+                      <label title="Small" class="size__label">
+                        <input type="radio" name="coat-size" class="size__radio" value="S" checked>
+                        <span class="size__value" data-value="S"></span>
+                      </label>
+                    </li>
+                    <li class="size__item">
+                      <label title="Medium" class="size__label">
+                        <input type="radio" name="coat-size" class="size__radio" value="M">
+                        <span class="size__value" data-value="M"></span>
+                      </label>
+                    </li>
+                    <li class="size__item">
+                      <label title="Large" class="size__label">
+                        <input type="radio" name="coat-size" class="size__radio" value="L">
+                        <span class="size__value" data-value="L"></span>
+                      </label>
+                    </li>
+                  </ul>
+                  <a href="#" class="size-guide">
+                    Size guide
+                  </a>
+                </div>
+              </fieldset>
+            </div>
+            <div class="order-form__bottom">
+              <fieldset class="order-form__block order-form__block--quantity">
+                <legend class="order-form__legend">
+                  Quantity
+                </legend>
+                <div class="quantity">
+                  <button class="quantity__btn quantity__btn--remove" aria-label="Убрать один товар" disabled>
+                    <span></span>
+                  </button>
+                  <input type="text" name="count" value="1" readonly>
+                  <button class="quantity__btn quantity__btn--add" aria-label="Убрать один товар">
+                    <span></span>
+                  </button>
+                </div>
+              </fieldset>
+              <fieldset class="order-form__block order-form__block--cost">
+                <legend class="order-form__legend">
+                  Cost
+                </legend>
+                <p class="order-form__cost-field"></p>
+              </fieldset>
+            </div>
+          </form>
+          <div class="product-details">
+            <h3 class="section-subtitle product-details__subtitle">Product details</h3>
+            <p class="section-text product-details__text">
+              Look out for its standout party dresses, feminine details, statement jackets and cool denim
+              including skinny-cut jeans and cute denim shorts, which sit alongside its directional footwear
+              and swimwear ranges.
+            </p>
+            <p class="section-subtext product-details__subtext">
+              63% Viscose, 37% Polyamide.
+            </p>
+          </div>
+          <button class="form-submit" type="submit" form="order-form">
+            Order now
+          </button>
+          <ul class="order-info">
+            <li class="order-info__item">
+              <div class="order__info-header" tabinsex="0">
+                <h3 class="order__info-title">Delivery</h3>
+              </div>
+              <div class="order__info-content">
+                <p class="section-subtext">Delivered on or before Monday, 25 February 2019<br>
+                  Note: Subject to placing your order before specific cut-off times. Details available in checkout.</p>
+                <p class="section-subtext">For free delivery – spend over <span>£18.08</span></p>
+              </div>
+            </li>
+            <li class="order-info__item">
+              <div class="order__info-header" tabinsex="0">
+                <h3 class="order__info-title">Return</h3>
+              </div>
+              <div class="order__info-content">
+                <p class="section-subtext">Return through your local Boxberry store available in over 2,300
+                  locations.<br>
+                  You can create your return on the carrier website by clicking the create return link.<br>
+                  Open 7 days a week, early until late.</p>
+              </div>
+            </li>
+          </ul>
+          <h3 class="section-subtitle collections__subtitle">Similar Collections</h3>
+          <ul class="collections-list">
+            <li class="collections-list__item">
+              <div class="collections-card">
+                <h3 class="collections-card__title">Kingsman style</h3>
+                <p class="collections-card__text">More silk, more freedom</p>
+                <a href="#" class="collections-card__link collections-card__link--kingsman"></a>
+              </div>
+            </li>
+            <li class="collections-list__item">
+              <div class="collections-card">
+                <h3 class="collections-card__title">Denim goddess</h3>
+                <p class="collections-card__text">More denim, more freedom</p>
+                <a href="#" class="collections-card__link collections-card__link--goddess"></a>
+              </div>
+            </li>
+          </ul>
+        </section>
+        <section class="subscribe">
+          <h2 class="section-title subscribe__title">
+            Subscribe our newsletter
+          </h2>
+          <p class="section-main-text subscribe__text">
+            Get notified about new collections of Gussi Store
+          </p>
+          <form action="https://postman-echo.com/post" class="subscribe__form" id="subscribe-form" method="POST"
+            aria-label="Subscribe Form">
+            <label for="name" class="visually-hidden">Enter your name</label>
+            <input id="name" class="subscribe__form-input" type="text" name="name" placeholder="Enter your name">
+            <label for="email" class="visually-hidden">Enter your email</label>
+            <input id="email" class="subscribe__form-input" type="email" name="email" placeholder="Enter your e-mail">
+            <div class="gender-select">
+              <p class="section-main-text">Choose your gender:</p>
+              <label for="male" class="gender-select__radio">
+                <input id="male" type="radio" value="male" name="gender" class="gender-radio" checked>
+                <span>Male</span>
+              </label>
+              <label for="female" class="gender-select__radio">
+                <input id="female" type="radio" value="female" name="gender" class="gender-radio">
+                <span>Female</span>
+              </label>
+            </div>
+            <div class="subscribe__consent">
+              <input id="consent" class="subscribe__consent-checkbox" type="checkbox" name="agreement" checked>
+              <label for="consent" class="subscribe__consent-label">
+                Look out for its standout party dresses, feminine details
+              </label>
+            </div>
+            <button class="form-submit subscribe__submit" type="submit" form="subscribe-form">
+              Subscribe Gussi
+            </button>
+          </form>
+        </section>
+      </div>
+      <!-- /.hero -->
+    </main>
+  </div>
+</body>
+
+</html>
