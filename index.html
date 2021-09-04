@@ -13,8 +13,10 @@
   <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
   <link rel="icon" href="./img/icon.png" type="image/png">
   <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/focus-visible.css">
   <link rel="stylesheet" href="./css/swiper-bundle.min.css">
   <link rel="stylesheet" href="./css/main.css">
+  <script defer src="./js/focus-visible.min.js"></script>
   <script defer src="./js/swiper-bundle.min.js"></script>
   <script defer src="./js/slider.js"></script>
   <script defer src="./js/main.js"></script>
@@ -110,7 +112,7 @@
               Gussi light coat
             </h2>
             <p class="section-main-text">
-              It takes you from the party to the after party with its fashion-forward styles. A playfull
+              It takes you from the party to the after party with its fashion-forward styles. A&nbsp;playfull
               blend of retro and modern outdoor design.
             </p>
           </div>
@@ -172,6 +174,12 @@
                         <span class="size__value" data-value="L"></span>
                       </label>
                     </li>
+                    <li class="size__item">
+                      <label title="Extra Large" class="size__label">
+                        <input type="radio" name="coat-size" class="size__radio" value="XL">
+                        <span class="size__value" data-value="XL"></span>
+                      </label>
+                    </li>
                   </ul>
                   <a href="#" class="size-guide">
                     Size guide
@@ -218,7 +226,7 @@
           </button>
           <ul class="order-info">
             <li class="order-info__item">
-              <div class="order__info-header" tabinsex="0">
+              <div class="order__info-header" tabindex="0">
                 <h3 class="order__info-title">Delivery</h3>
               </div>
               <div class="order__info-content">
@@ -228,7 +236,7 @@
               </div>
             </li>
             <li class="order-info__item">
-              <div class="order__info-header" tabinsex="0">
+              <div class="order__info-header" tabindex="0">
                 <h3 class="order__info-title">Return</h3>
               </div>
               <div class="order__info-content">

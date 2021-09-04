@@ -73,6 +73,12 @@
       e.preventDefault();
       el.parentNode.classList.toggle('order-info__item--opened');
     });
+    el.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter' || e.keyCode === 32) {
+        e.preventDefault();
+        el.parentNode.classList.toggle('order-info__item--opened');
+      };
+    });
   })
 
 })();
