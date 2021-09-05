@@ -1100,13 +1100,9 @@ button:focus,
   align-items: center;
   justify-content: center;
   padding: 35px 50px;
-  width: 100%;
-  height: 100vh;
   background-color: rgba(25, 43, 63, .75);
   opacity: 0;
   visibility: hidden;
-  overflow-x: hidden;
-  overflow-y: auto;
   transition: opacity .35s ease, visibility .35s ease;
   z-index: 11;
 }
@@ -1118,15 +1114,23 @@ button:focus,
 }
 
 .popup {
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: auto;
-  height: auto;
+  width: 100%;
   max-height: 100%;
-  background-color: transparent;
+  overflow-x: hidden;
+  overflow-y: auto;
   display: none;
+}
+
+.popup-sizes {
+  max-width: 500px;
+}
+
+.popup__picture-image {
+  object-fit: contain;
+  vertical-align: top;
 }
 
 .popup-sizes img {
@@ -1138,12 +1142,8 @@ button:focus,
   text-align: center;
 }
 
-.popup__picture-image {
-  margin-bottom: 25px;
-  vertical-align: top;
-}
-
 .popup-404 .popup__picture-image {
+  margin-bottom: 25px;
   max-width: 150px;
 }
 
