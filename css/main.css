@@ -1123,7 +1123,8 @@ button:focus,
   align-items: center;
   justify-content: center;
   width: auto;
-  height: 100%;
+  height: auto;
+  max-height: 100%;
   background-color: transparent;
   display: none;
 }
