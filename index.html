@@ -19,11 +19,12 @@
   <script defer src="./js/focus-visible.min.js"></script>
   <script defer src="./js/swiper-bundle.min.js"></script>
   <script defer src="./js/slider.js"></script>
+  <script defer src="./js/popups.js"></script>
   <script defer src="./js/main.js"></script>
   <title>Тестовое задание для студии &quot;Pitch&quot;</title>
 </head>
 
-<body>
+<body class="body">
   <div class="page">
     <main class="main container">
       <h1 class="main-title visually-hidden">Тестовое задание для студии &quot;Pitch&quot;</h1>
@@ -42,7 +43,7 @@
                   <source srcset="./img/hero/bg_768/hero_1.jpg" type="image/jpeg"
                     media="(min-width: 401px) and (max-width: 1024px)">
                   <source srcset="./img/hero/bg_375/hero_1.jpg" type="image/jpeg" media="(max-width: 400px)">
-                  <img class="card__picture-image" src="./img/hero/bg/hero_1.jpg" alt="Изображение товара">
+                  <img class="card__picture-image" src="./img/hero/bg/hero_1.jpg" alt="Product image">
                 </picture>
                 <div class="card__description">
                   <h2 class="card-header" style="opacity: 0; transform: translateY(75px)">
@@ -63,7 +64,7 @@
                   <source srcset="./img/hero/bg_768/hero_2.jpg" type="image/jpeg"
                     media="(min-width: 401px) and (max-width: 1024px)">
                   <source srcset="./img/hero/bg_375/hero_2.jpg" type="image/jpeg" media="(max-width: 400px)">
-                  <img class="card__picture-image" src="./img/hero/bg/hero_2.jpg" alt="Изображение товара">
+                  <img class="card__picture-image" src="./img/hero/bg/hero_2.jpg" alt="Product image">
                 </picture>
                 <div class="card__description">
                   <h2 class="card-header" style="opacity: 0; transform: translateY(75px)">
@@ -84,7 +85,7 @@
                   <source srcset="./img/hero/bg_768/hero_3.jpg" type="image/jpeg"
                     media="(min-width: 401px) and (max-width: 1024px)">
                   <source srcset="./img/hero/bg_375/hero_3.jpg" type="image/jpeg" media="(max-width: 400px)">
-                  <img class="card__picture-image" src="./img/hero/bg/hero_3.jpg" alt="Изображение товара">
+                  <img class="card__picture-image" src="./img/hero/bg/hero_3.jpg" alt="Product image">
                 </picture>
                 <div class="card__description">
                   <h2 class="card-header" style="opacity: 0; transform: translateY(75px)">
@@ -181,7 +182,7 @@
                       </label>
                     </li>
                   </ul>
-                  <a href="#" class="size-guide" aria-label="Size guide">
+                  <a href="#" class="size-guide popup-link" data-path="popup-sizes" aria-label="Size guide">
                     Size guide
                   </a>
                 </div>
@@ -254,16 +255,16 @@
               <div class="collections-card">
                 <h3 class="collections-card__title">Kingsman style</h3>
                 <p class="collections-card__text">More silk, more freedom</p>
-                <a href="#" class="collections-card__link collections-card__link--kingsman"
-                  aria-label="Kingsman style collection"></a>
+                <a href="#" class="collections-card__link collections-card__link--kingsman popup-link"
+                  data-path="popup-404" aria-label="Kingsman style collection"></a>
               </div>
             </li>
             <li class="collections-list__item">
               <div class="collections-card">
                 <h3 class="collections-card__title">Denim goddess</h3>
                 <p class="collections-card__text">More denim, more freedom</p>
-                <a href="#" class="collections-card__link collections-card__link--goddess"
-                  aria-label="Denim goddess collection"></a>
+                <a href="#" class="collections-card__link collections-card__link--goddess popup-link"
+                  data-path="popup-404" aria-label="Denim goddess collection"></a>
               </div>
             </li>
           </ul>
@@ -306,6 +307,22 @@
       </div>
       <!-- /.hero -->
     </main>
+  </div>
+  <div class="popups">
+    <div class="popup-overlay">
+      <div class="popup popup-sizes" data-target="popup-sizes">
+        <picture class="popup__picture">
+          <source srcset="./img/sizes/sizes_table.webp" type="image/webp">
+          <img class="popup__picture-image" src="./img/sizes/sizes_table.jpg" alt="Sizes table">
+        </picture>
+      </div>
+      <div class="popup popup-404" data-target="popup-404">
+        <img class="popup__picture-image" src="./img/coding.svg" alt="Page is under construction">
+        <p class="popup__text">
+          Page is under construction
+        </p>
+      </div>
+    </div>
   </div>
 </body>
 

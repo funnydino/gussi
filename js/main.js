@@ -2,7 +2,7 @@
 
 (() => {
 
-  console.log('Hello, world!');
+  console.log('Test task for \'Pitch\' studio.');
 
   const itemPrice = 119.99;
   let itemAmount = 1,

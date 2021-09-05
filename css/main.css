@@ -55,7 +55,7 @@ html {
   padding: 0;
 }
 
-body {
+.body {
   font-family: Rajdhani, sans-serif;
   font-weight: 500;
   color: var(--main-text-color);
@@ -65,6 +65,14 @@ body {
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -webkit-tap-highlight-color: transparent;
+}
+
+.body--lock {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 a {
@@ -265,12 +273,12 @@ button:focus,
   font-size: 72px;
   font-weight: 400;
   line-height: 1;
-  transition: opacity 1.25s ease 1s, transform .75s ease 1s;
+  transition: opacity 1.25s ease .65s, transform .75s ease .5s;
 }
 
 .card-text {
   line-height: 1;
-  transition: opacity 1.5s ease 1.35s;
+  transition: opacity 1.5s ease 1s;
 }
 
 .card-header,
@@ -1079,6 +1087,64 @@ button:focus,
 .subscribe__submit {
   margin-bottom: 0;
 }
+
+/* Popups */
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 35px 25px;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(25, 43, 63, .75);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .35s ease, visibility .35s ease;
+  z-index: 11;
+}
+
+.popup-overlay--visible {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity .35s ease, visibility .35s ease;
+}
+
+.popup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: auto;
+  background-color: transparent;
+  display: none;
+}
+
+.popup-404 {
+  width: 250px;
+  text-align: center;
+}
+
+.popup-404 .popup__picture-image {
+  max-width: 150px;
+}
+
+.popup__text {
+  font-size: 32px;
+  color: var(--light-text-color);
+  pointer-events: none;
+}
+
+.popup--visible {
+  display: block;
+}
+
+/* Media Queries */
 
 @media(max-width: 1366px) {
 

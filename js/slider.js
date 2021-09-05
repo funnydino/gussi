@@ -6,6 +6,8 @@ const swiper = new Swiper($slider, {
   direction: 'horizontal',
   loop: true,
   simulateTouch: false,
+  speed: 500,
+  parallax: true,
 
   autoplay: {
     delay: 5000,
