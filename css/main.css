@@ -1139,6 +1139,7 @@ button:focus,
 }
 
 .popup__picture-image {
+  margin-bottom: 25px;
   vertical-align: top;
 }
 
