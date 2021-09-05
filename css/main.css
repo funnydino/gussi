@@ -71,7 +71,7 @@ html {
   left: 0;
   top: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -1105,7 +1105,8 @@ button:focus,
   background-color: rgba(25, 43, 63, .75);
   opacity: 0;
   visibility: hidden;
-  overflow-y: scroll;
+  overflow-x: hidden;
+  overflow-y: auto;
   transition: opacity .35s ease, visibility .35s ease;
   z-index: 11;
 }
@@ -1117,18 +1118,27 @@ button:focus,
 }
 
 .popup {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   width: auto;
-  height: auto;
+  height: 100%;
   background-color: transparent;
   display: none;
+}
+
+.popup-sizes img {
+  border-radius: 15px;
 }
 
 .popup-404 {
   width: 250px;
   text-align: center;
+}
+
+.popup__picture-image {
+  vertical-align: top;
 }
 
 .popup-404 .popup__picture-image {
