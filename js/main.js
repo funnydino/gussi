@@ -79,6 +79,14 @@
         el.parentNode.classList.toggle('order-info__item--opened');
       };
     });
-  })
+  });
+
+  document.querySelectorAll('.card-header').forEach((el) => {
+    el.setAttribute('style', 'opacity: 1; transform: translateY(0)')
+  });
+
+  document.querySelectorAll('.card-text').forEach((el) => {
+    el.setAttribute('style', 'opacity: 1;')
+  });
 
 })();

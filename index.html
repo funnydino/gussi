@@ -45,10 +45,10 @@
                   <img class="card__picture-image" src="./img/hero/bg/hero_1.jpg" alt="Изображение товара">
                 </picture>
                 <div class="card__description">
-                  <h2 class="card-header">
+                  <h2 class="card-header" style="opacity: 0; transform: translateY(75px)">
                     Light coat
                   </h2>
-                  <p class="card-text">
+                  <p class="card-text" style="opacity: 0;">
                     More cotton, more freedom
                   </p>
                 </div>
@@ -66,10 +66,10 @@
                   <img class="card__picture-image" src="./img/hero/bg/hero_2.jpg" alt="Изображение товара">
                 </picture>
                 <div class="card__description">
-                  <h2 class="card-header">
+                  <h2 class="card-header" style="opacity: 0; transform: translateY(75px)">
                     Sandy longsleeve
                   </h2>
-                  <p class="card-text">
+                  <p class="card-text" style="opacity: 0;">
                     More cotton, more freedom
                   </p>
                 </div>
@@ -87,10 +87,10 @@
                   <img class="card__picture-image" src="./img/hero/bg/hero_3.jpg" alt="Изображение товара">
                 </picture>
                 <div class="card__description">
-                  <h2 class="card-header">
+                  <h2 class="card-header" style="opacity: 0; transform: translateY(75px)">
                     Lime jacket
                   </h2>
-                  <p class="card-text">
+                  <p class="card-text" style="opacity: 0;">
                     More cotton, more freedom
                   </p>
                 </div>
@@ -181,7 +181,7 @@
                       </label>
                     </li>
                   </ul>
-                  <a href="#" class="size-guide">
+                  <a href="#" class="size-guide" aria-label="Size guide">
                     Size guide
                   </a>
                 </div>
@@ -193,11 +193,12 @@
                   Quantity
                 </legend>
                 <div class="quantity">
-                  <button class="quantity__btn quantity__btn--remove" aria-label="Убрать один товар" disabled>
+                  <button class="quantity__btn quantity__btn--remove" aria-label="Add one item" disabled>
                     <span></span>
                   </button>
-                  <input type="text" name="count" value="1" readonly>
-                  <button class="quantity__btn quantity__btn--add" aria-label="Убрать один товар">
+                  <label for="count" class="visually-hidden">Amount of items in the cart</label>
+                  <input type="text" name="count" id="count" value="1" readonly>
+                  <button class="quantity__btn quantity__btn--add" aria-label="Remove one item">
                     <span></span>
                   </button>
                 </div>
@@ -253,14 +254,16 @@
               <div class="collections-card">
                 <h3 class="collections-card__title">Kingsman style</h3>
                 <p class="collections-card__text">More silk, more freedom</p>
-                <a href="#" class="collections-card__link collections-card__link--kingsman"></a>
+                <a href="#" class="collections-card__link collections-card__link--kingsman"
+                  aria-label="Kingsman style collection"></a>
               </div>
             </li>
             <li class="collections-list__item">
               <div class="collections-card">
                 <h3 class="collections-card__title">Denim goddess</h3>
                 <p class="collections-card__text">More denim, more freedom</p>
-                <a href="#" class="collections-card__link collections-card__link--goddess"></a>
+                <a href="#" class="collections-card__link collections-card__link--goddess"
+                  aria-label="Denim goddess collection"></a>
               </div>
             </li>
           </ul>
