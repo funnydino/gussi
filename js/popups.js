@@ -2,38 +2,48 @@
 
 // Popups:
 
-const body = document.querySelector('.body');
-const popupLinks = document.querySelectorAll('.popup-link');
-const popupOverlay = document.querySelector('.popup-overlay');
-const popups = document.querySelectorAll('.popup');
+const $body = document.querySelector('.body');
+const $popupLinks = document.querySelectorAll('.popup-link');
+const $popupOverlay = document.querySelector('.popup-overlay');
+const $popups = document.querySelectorAll('.popup');
+const $fixBlocks = document.querySelectorAll('.fix-block');
 
-const bodyLock = () => {
-  body.classList.add('body--lock');
+const disableScroll = () => {
+  const paddingOffset = window.innerWidth - document.body.offsetWidth + 'px';
+  $body.classList.add('body--lock');
+  $fixBlocks.forEach((el) => {
+    el.style.paddingRight = paddingOffset;
+  });
+  document.body.style.paddingRight = paddingOffset;
 };
 
-const bodyUnlock = () => {
-  body.classList.remove('body--lock');
+const enableScroll = () => {
+  $body.classList.remove('body--lock');
+  $fixBlocks.forEach((el) => {
+    el.style.paddingRight = '0px';
+  });
+  document.body.style.paddingRight = '0px';
 };
 
-popupLinks.forEach((el) => {
+$popupLinks.forEach((el) => {
   el.addEventListener('click', (e) => {
     e.preventDefault();
-    bodyLock();
+    disableScroll();
     const path = e.currentTarget.getAttribute('data-path');
-    popups.forEach((el) => {
+    $popups.forEach((el) => {
       el.classList.remove('popup--visible');
     });
     document.querySelector(`[data-target="${path}"]`).classList.add('popup--visible');
-    popupOverlay.classList.add('popup-overlay--visible');
+    $popupOverlay.classList.add('popup-overlay--visible');
   });
 });
 
-popupOverlay.addEventListener('click', (e) => {
-  if (e.target == popupOverlay) {
-    popupOverlay.classList.remove('popup-overlay--visible');
-    popups.forEach((el) => {
+$popupOverlay.addEventListener('click', (e) => {
+  if (e.target == $popupOverlay) {
+    $popupOverlay.classList.remove('popup-overlay--visible');
+    $popups.forEach((el) => {
       el.classList.remove('popup--visible');
     });
-    bodyUnlock();
+    enableScroll();
   };
 });
