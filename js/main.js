@@ -4,89 +4,98 @@
 
   console.log('Test task for studio \'Pitch\'.');
 
-  const itemPrice = 119.99;
-  let itemAmount = 1,
-    cartPrice = itemPrice * itemAmount;
-  const $itemPriceField = document.querySelector('.order-form__cost-field');
-  const $itemAmountField = document.querySelector('.quantity>input[name="count"]');
-  const $reduceAmountBtn = document.querySelector('.quantity__btn--remove');
-  const $increaseAmountBtn = document.querySelector('.quantity__btn--add');
-  const $orderInfoItems = document.querySelectorAll('.order__info-header');
+  document.addEventListener('DOMContentLoaded', () => {
 
-  // Spincrement (сумма товаров в корзине увеличивается плавно):
+    const itemPrice = 119.99;
+    let itemAmount = 1,
+      cartPrice = itemPrice * itemAmount;
+    const $itemPriceField = document.querySelector('.order-form__cost-field');
+    const $itemAmountField = document.querySelector('.quantity>input[name="count"]');
+    const $reduceAmountBtn = document.querySelector('.quantity__btn--remove');
+    const $increaseAmountBtn = document.querySelector('.quantity__btn--add');
+    const $accordions = document.querySelectorAll('.order-info__item');
 
-  const step = itemPrice.toString().split('.')[0].slice(-1) != 0 || itemPrice.toString().split('.')[1] ? 1 : 10;
-  const spincrementTime = 150;
+    // Spincrement (сумма товаров в корзине увеличивается плавно):
 
-  const updateCost = (itemPrice, quantity = 1) => {
+    const step = itemPrice.toString().split('.')[0].slice(-1) != 0 || itemPrice.toString().split('.')[1] ? 1 : 10;
+    const spincrementTime = 150;
 
-    $itemAmountField.value = quantity;
-    cartPrice = cartPrice.toString().split('.')[0];
-    const currentCost = (+itemPrice * +quantity).toFixed(2).split('.');
+    const updateCost = (itemPrice, quantity = 1) => {
 
-    let n = +cartPrice;
-    const t = Math.round(spincrementTime / (Math.abs(currentCost[0] - cartPrice) / step));
+      $itemAmountField.value = quantity;
+      cartPrice = cartPrice.toString().split('.')[0];
+      const currentCost = (+itemPrice * +quantity).toFixed(2).split('.');
 
-    const interval = setInterval(() => {
-      if (n < currentCost[0]) {
-        n = n + step;
-        if (n == currentCost[0]) {
-          clearInterval(interval);
-        };
-      } else {
-        n = n - step;
-        if (n == currentCost[0]) {
-          clearInterval(interval);
-        };
-      }
-      $itemPriceField.innerHTML = `<span>$${new Intl.NumberFormat("usd").format(n)}.</span>${currentCost[1]}`;
-    }, t);
+      let n = +cartPrice;
+      const t = Math.round(spincrementTime / (Math.abs(currentCost[0] - cartPrice) / step));
 
-    cartPrice = +itemPrice * +quantity;
+      const interval = setInterval(() => {
+        if (n < currentCost[0]) {
+          n = n + step;
+          if (n == currentCost[0]) {
+            clearInterval(interval);
+          };
+        } else {
+          n = n - step;
+          if (n == currentCost[0]) {
+            clearInterval(interval);
+          };
+        }
+        $itemPriceField.innerHTML = `<span>$${new Intl.NumberFormat("usd").format(n)}.</span>${currentCost[1]}`;
+      }, t);
 
-  };
+      cartPrice = +itemPrice * +quantity;
 
-  updateCost(itemPrice, itemAmount);
-
-  $reduceAmountBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    if (itemAmount > 1) {
-      --itemAmount;
-      updateCost(itemPrice, itemAmount);
     };
-    if (itemAmount == 1) {
-      $reduceAmountBtn.setAttribute('disabled', true);
-    };
-  });
 
-  $increaseAmountBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    if ($reduceAmountBtn.hasAttribute('disabled')) {
-      $reduceAmountBtn.removeAttribute('disabled');
-    };
-    ++itemAmount;
     updateCost(itemPrice, itemAmount);
-  });
 
-  $orderInfoItems.forEach((el) => {
-    el.addEventListener('click', (e) => {
+    $reduceAmountBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      el.parentNode.classList.toggle('order-info__item--opened');
-    });
-    el.addEventListener('keypress', (e) => {
-      if (e.key === 'Enter' || e.keyCode === 32) {
-        e.preventDefault();
-        el.parentNode.classList.toggle('order-info__item--opened');
+      if (itemAmount > 1) {
+        --itemAmount;
+        updateCost(itemPrice, itemAmount);
+      };
+      if (itemAmount == 1) {
+        $reduceAmountBtn.setAttribute('disabled', true);
       };
     });
-  });
 
-  document.querySelectorAll('.card-header').forEach((el) => {
-    el.setAttribute('style', 'opacity: 1; transform: translateY(0)')
-  });
+    $increaseAmountBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      if ($reduceAmountBtn.hasAttribute('disabled')) {
+        $reduceAmountBtn.removeAttribute('disabled');
+      };
+      ++itemAmount;
+      updateCost(itemPrice, itemAmount);
+    });
 
-  document.querySelectorAll('.card-text').forEach((el) => {
-    el.setAttribute('style', 'opacity: 1;')
+    $accordions.forEach((el) => {
+      el.addEventListener('click', (e) => {
+        const self = e.currentTarget;
+        const control = self.querySelector('.order__info-header');
+        const content = self.querySelector('.order__info-content');
+        self.classList.toggle('order-info__item--opened');
+        if (self.classList.contains('order-info__item--opened')) {
+          control.setAttribute('aria-expanded', true);
+          content.setAttribute('aria-hidden', false);
+          content.style.maxHeight = content.scrollHeight + 'px';
+        } else {
+          control.setAttribute('aria-expanded', false);
+          content.setAttribute('aria-hidden', true);
+          content.style.maxHeight = null;
+        };
+      });
+    });
+
+    document.querySelectorAll('.card-header').forEach((el) => {
+      el.setAttribute('style', 'opacity: 1; transform: translateY(0)')
+    });
+
+    document.querySelectorAll('.card-text').forEach((el) => {
+      el.setAttribute('style', 'opacity: 1;')
+    });
+
   });
 
 })();

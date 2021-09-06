@@ -25,7 +25,7 @@
 </head>
 
 <body class="body">
-  <div class="page">
+  <div class="page fix-block">
     <main class="main container">
       <h1 class="main-title visually-hidden">Тестовое задание для студии &quot;Pitch&quot;</h1>
       <div class="side-slider">
@@ -35,7 +35,9 @@
             <div class="swiper-wrapper">
               <div class="swiper-slide card">
                 <picture class="card__picture">
-                  <source srcset="./img/hero/bg/hero_1.webp" type="image/webp" media="(min-width: 1025px)">
+                  <source srcset="./img/hero/bg/hero_1_2x.webp" type="image/webp" media="(min-width: 1366px)">
+                  <source srcset="./img/hero/bg/hero_1.webp" type="image/webp"
+                    media="(min-width: 1025px) and (max-width: 1365px)">
                   <source srcset="./img/hero/bg_768/hero_1.webp" type="image/webp"
                     media="(min-width: 401px) and (max-width: 1024px)">
                   <source srcset="./img/hero/bg_375/hero_1.webp" type="image/webp" media="(max-width: 400px)">
@@ -56,7 +58,9 @@
               </div>
               <div class="swiper-slide card">
                 <picture class="card__picture">
-                  <source srcset="./img/hero/bg/hero_2.webp" type="image/webp" media="(min-width: 1025px)">
+                  <source srcset="./img/hero/bg/hero_2_2x.webp" type="image/webp" media="(min-width: 1366px)">
+                  <source srcset="./img/hero/bg/hero_2.webp" type="image/webp"
+                    media="(min-width: 1025px) and (max-width: 1365px)">
                   <source srcset="./img/hero/bg_768/hero_2.webp" type="image/webp"
                     media="(min-width: 401px) and (max-width: 1024px)">
                   <source srcset="./img/hero/bg_375/hero_2.webp" type="image/webp" media="(max-width: 400px)">
@@ -77,7 +81,9 @@
               </div>
               <div class="swiper-slide card">
                 <picture class="card__picture">
-                  <source srcset="./img/hero/bg/hero_3.webp" type="image/webp" media="(min-width: 1025px)">
+                  <source srcset="./img/hero/bg/hero_3_2x.webp" type="image/webp" media="(min-width: 1366px)">
+                  <source srcset="./img/hero/bg/hero_3.webp" type="image/webp"
+                    media="(min-width: 1025px) and (max-width: 1365px)">
                   <source srcset="./img/hero/bg_768/hero_3.webp" type="image/webp"
                     media="(min-width: 401px) and (max-width: 1024px)">
                   <source srcset="./img/hero/bg_375/hero_3.webp" type="image/webp" media="(max-width: 400px)">
@@ -177,7 +183,7 @@
                     </li>
                     <li class="size__item">
                       <label title="Extra Large" class="size__label">
-                        <input type="radio" name="coat-size" class="size__radio" value="XL">
+                        <input type="radio" name="coat-size" class="size__radio" value="XL" disabled>
                         <span class="size__value" data-value="XL"></span>
                       </label>
                     </li>
@@ -228,20 +234,20 @@
           </button>
           <ul class="order-info">
             <li class="order-info__item">
-              <div class="order__info-header" tabindex="0">
-                <h3 class="order__info-title">Delivery</h3>
-              </div>
-              <div class="order__info-content">
+              <button class="order__info-header" aria-expanded="false">
+                <span class="order__info-title">Delivery</span>
+              </button>
+              <div class="order__info-content" aria-hidden="true">
                 <p class="section-subtext">Delivered on or before Monday, 25 February 2019<br>
                   Note: Subject to placing your order before specific cut-off times. Details available in checkout.</p>
                 <p class="section-subtext">For free delivery – spend over <span>£18.08</span></p>
               </div>
             </li>
             <li class="order-info__item">
-              <div class="order__info-header" tabindex="0">
-                <h3 class="order__info-title">Return</h3>
-              </div>
-              <div class="order__info-content">
+              <button class="order__info-header" aria-expanded="false">
+                <span class="order__info-title">Return</span>
+              </button>
+              <div class="order__info-content" aria-hidden="true">
                 <p class="section-subtext">Return through your local Boxberry store available in over 2,300
                   locations.<br>
                   You can create your return on the carrier website by clicking the create return link.<br>

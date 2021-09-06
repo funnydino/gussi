@@ -116,14 +116,17 @@ ul {
 }
 
 .page {
-  overflow: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  overflow-x: hidden;
+  overflow-y: visible;
 }
 
 .container {
   width: 100%;
-  max-width: 1460px;
-  padding: 0 50px;
-  margin: 0 auto;
 }
 
 .main {
@@ -148,19 +151,19 @@ button:focus,
 
 .side-slider {
   display: flex;
-  flex: 0 0 600px;
+  flex: 0 0 44.1%;
 }
 
 .swiper-cont {
   position: fixed;
   top: 0;
-  max-width: 600px;
-  background-color: var(--main-text-color);
+  left: 0;
+  width: 44.1%;
+  max-width: 100%;
 }
 
 .swiper {
   position: relative;
-  max-height: 768px;
 }
 
 .swiper__nav {
@@ -245,8 +248,10 @@ button:focus,
 
 .card {
   position: relative;
-  width: 100%;
+  width: auto;
   height: auto;
+  max-height: 100vh;
+  background-color: var(--main-text-color);
 }
 
 .card img {
@@ -281,18 +286,11 @@ button:focus,
   transition: opacity 1.5s ease 1s;
 }
 
-.card-header,
-.card-text {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
 /* Hero */
 
 .hero {
-  flex: 0 1 760px;
-  padding: 55px 50px 55px 92px;
+  flex: 0 1 55.9%;
+  padding: 55px 50px 55px 100px;
 }
 
 /* Order */
@@ -443,6 +441,10 @@ button:focus,
     border-color: var(--grey-text-color);
   }
 
+  .size__radio:disabled+.size__value:hover::before {
+    border-color: transparent;
+  }
+
 }
 
 .colors__radio:checked+.colors__value::before,
@@ -458,7 +460,7 @@ button:focus,
 /* Product Size */
 
 .size {
-  margin-right: 25px;
+  margin-right: 20px;
   margin-bottom: 10px;
 }
 
@@ -467,7 +469,7 @@ button:focus,
 }
 
 .size__item:not(:last-child) {
-  margin-right: 8px;
+  margin-right: 5px;
 }
 
 .size__value {
@@ -488,6 +490,10 @@ button:focus,
   color: var(--main-text-color);
 }
 
+.size__radio:disabled+.size__value::after {
+  color: var(--border-color);
+}
+
 .size-guide {
   align-self: baseline;
   padding: 0 15px;
@@ -495,7 +501,7 @@ button:focus,
   border: 1px solid var(--gold-color);
   border-radius: 24px;
   color: var(--gold-color);
-  line-height: 2;
+  line-height: 1.8;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -527,7 +533,7 @@ button:focus,
 /* Products Quantity */
 
 .order-form__block--quantity>.order-form__legend {
-  margin-bottom: 18px;
+  margin-bottom: 15px;
 }
 
 .quantity {
@@ -681,10 +687,15 @@ button:focus,
   margin-bottom: 40px;
 }
 
+.order-info__item {}
+
 .order__info-header {
   position: relative;
-  padding: 10px 0;
+  padding: 15px 0;
+  width: 100%;
   border-bottom: 1px solid var(--border-color);
+  font-size: 24px;
+  font-weight: 500;
   cursor: pointer;
   transition: border-color .35s ease;
 }
@@ -714,18 +725,15 @@ button:focus,
   transform: translateY(-50%) rotate(180deg);
 }
 
-.order__info-title {
-  font-size: 24px;
-  font-weight: 500;
-}
-
 .order__info-content {
   position: relative;
+  max-height: 0;
   padding: 0;
-  height: 0;
   opacity: 0;
-  visibility: hidden;
-  transition: padding .35s ease, height .35s ease, opacity .35s ease;
+  overflow: hidden;
+  transition: padding .35s ease, max-height .35s ease, opacity .35s ease;
+  will-change: max-height;
+  box-sizing: content-box;
 }
 
 .order__info-content::after {
@@ -742,18 +750,12 @@ button:focus,
 
 .order-info__item--opened>.order__info-content {
   padding: 15px 0;
-  height: auto;
   opacity: 1;
-  visibility: visible;
+
 }
 
 .order-info__item--opened>.order__info-content::after {
   width: 100%;
-}
-
-.section-subtext {
-  margin-bottom: 0;
-  transition: margin .35s ease;
 }
 
 .section-subtext span {
@@ -857,11 +859,11 @@ button:focus,
 }
 
 .collections-card__link--kingsman {
-  background-image: url('../img/collections/col_01.jpg');
+  background-image: url('../img/collections/col_01_2x.jpg');
 }
 
 .collections-card__link--goddess {
-  background-image: url('../img/collections/col_02.jpg');
+  background-image: url('../img/collections/col_02_2x.jpg');
 }
 
 @media(min-width: 1025px) {
@@ -1125,7 +1127,7 @@ button:focus,
 }
 
 .popup-sizes {
-  max-width: 500px;
+  max-width: 650px;
 }
 
 .popup__picture-image {
@@ -1161,32 +1163,11 @@ button:focus,
 
 @media(max-width: 1366px) {
 
-  .container {
-    padding: 0 15px;
-  }
-
-  .hero {
-    flex-basis: 100%;
-    padding: 30px;
-  }
-
   .logo {
     top: 24px;
     left: 16px;
     width: 65px;
     height: auto;
-  }
-
-  .side-slider {
-    flex-basis: 450px;
-  }
-
-  .swiper-cont {
-    max-width: 450px;
-  }
-
-  .swiper {
-    max-height: 576px;
   }
 
   .card__description {
@@ -1206,18 +1187,17 @@ button:focus,
     bottom: 60px;
   }
 
-  .card-header,
-  .card-text {
-    white-space: inherit;
+  .collections-card__link--kingsman {
+    background-image: url('../img/collections/col_01.jpg');
+  }
+
+  .collections-card__link--goddess {
+    background-image: url('../img/collections/col_02.jpg');
   }
 
 }
 
 @media(max-width: 1024px) {
-
-  .container {
-    padding: 0;
-  }
 
   .main {
     flex-direction: column;
@@ -1237,7 +1217,6 @@ button:focus,
   }
 
   .swiper {
-    max-height: none;
     height: 600px;
   }
 
@@ -1280,10 +1259,6 @@ button:focus,
 
   .size__value::after {
     font-size: 24px;
-  }
-
-  .size__item:not(:last-child) {
-    margin-right: 5px;
   }
 
   .size-guide {
