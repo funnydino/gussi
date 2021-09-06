@@ -751,7 +751,6 @@ button:focus,
 .order-info__item--opened>.order__info-content {
   padding: 15px 0;
   opacity: 1;
-
 }
 
 .order-info__item--opened>.order__info-content::after {
@@ -1223,6 +1222,10 @@ button:focus,
 
   .swiper {
     height: 600px;
+  }
+
+  .card {
+    max-height: none;
   }
 
   .section-main-text {
