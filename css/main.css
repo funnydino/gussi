@@ -758,6 +758,11 @@ button:focus,
   width: 100%;
 }
 
+.order__info-content>.section-subtext {
+  margin-bottom: 5px;
+  transition: margin .35s ease;
+}
+
 .section-subtext span {
   font-weight: 600;
 }
